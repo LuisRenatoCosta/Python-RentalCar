@@ -1,0 +1,93 @@
+import time
+
+option = 0
+days = 0
+print("                       ----WELCOME TO PYTHON'S RENTAL CAR----\n")
+print("                                PLEASE CHOOSE YOUR CAR")
+print("[1] Banshee - Type: Sport - Doors: 2 - Speed limit: 250km/h - Price: US$ 300,00/day")
+print("[2] Cheetah - Type: Super - Doors: 2 - Speed limit: 325km/h - Price: US$ 350,00/day")
+print("[3] Feltzer - Type: Sport - Doors: 2 - Speed limit: 240km/h - Price: US$ 200,00/day")
+print("[4] Huntley - Type: SUV - Doors: 4 - Speed limit: 230km/h - Price: US$ 260,00/day")
+print("[5] Landstalker - Type: SUV - Doors: 4 - Speed limit: 210km/h - Price: US$ 200,00/day")
+print("[6] Manana - Type: Compact - Doors: 2 - Speed limit: 180km/h - Price: US$ 130,00/day")
+print("[7] Rhapsody - Type: Compact - Doors: 2 - Speed limit: 140km/h - Price: US$ 90,00/day")
+print("[8] Serrano - Type: SUV - Doors: 4 - Speed limit: 220km/h  - Price: US$ 230,00/day")
+print("[9] Stretch - Type: Limo - Doors: 4 - Speed limit: 180km/h - Price: US$ 400,00/day")
+print("[10] Sultan - Type:  Sport - Doors: 2 - Speed limit: 280km/h - Price: US$ 350,00/day")
+print("[11] Surano - Type: Sport - Doors: 2 - Speed limit: 350km/h - Price: US$ 350,00/day")
+print("[12] Zentorno - Type: Super - Doors: 2 - Speed limit: 420km/h - Price: US$ 400,00/day\n")
+
+while option < 1 or option > 12:
+  option = int(input("Please write the number of the vehicle: "))
+  if option < 1 or option > 12:
+    print("Please, choose an number between 1 and 12")
+
+while days < 1:
+  days = int(input("How many days will you rent the car: "))
+  if days < 1:
+    print("Invalid number of days.... Please, decide it again....")
+print()
+
+if option == 1 or option == 2 or option == 10 or option == 11 or option == 12:
+  if option == 1:
+    name = "Banshee"
+    price_day = 300
+  elif option == 2:
+    name = "Cheetah"
+    price_day = 350
+  elif option == 10:
+    name = "Sultan"
+    price_day = 350
+  elif option == 11:
+    name = "Surano"
+    price_day = 350
+  else:
+    name = "Zentorno"
+    price_day = 400
+  cleaner_tax = 100
+  oil_tax = 150
+  car_security = 160
+elif option == 4 or option == 5 or option == 8:
+  if option == 4:
+    name = "Huntley"
+    price_day = 260
+  elif option == 5:
+    name = "Landstalker"
+    price_day = 200
+  else:
+    name = "Serrano"
+    price_day = 230 
+  cleaner_tax = 80
+  oil_tax = 120
+  car_security = 120
+elif option == 3 or option == 6 or option == 7:
+  if option == 3:
+    name = "Feltzer"
+    price_day = 200
+  elif option == 6:
+    name = "Manana"
+    price_day = 130
+  else:
+    name = "Rhapsody"
+    price_day = 90
+  cleaner_tax = 60
+  oil_tax = 80
+  car_security = 50
+else:
+  name = "Stretch"
+  price_day = 400
+  cleaner_tax = 150
+  oil_tax = 110
+  car_security = 110
+
+print("------------       LOADING      ------------")
+time.sleep(2)
+tax = cleaner_tax + oil_tax
+total = price_day*days + tax + car_security
+print("       CAR: ", name)
+print("       DAYS: ", days)
+print("       TAX: US$ ", tax)
+print("       SECURITY: US$ ", car_security)
+print("       TOTAL: US$ ", total)
+
+print("---THANK YOU FOR CHOOSE PYTHON'S RENT CAR---")
